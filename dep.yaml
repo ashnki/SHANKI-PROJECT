@@ -22,4 +22,4 @@ spec:
                   name: app-config
                   key: APP_MODE
          command: ["sh", "-c"]
-         args: ["echo Hello from deplyoment"]
+         args: ["echo Hello from deplyoment of $APP_MODE"]
