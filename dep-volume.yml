@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: tom-deployment
 spec:
   replicas: 2
   selector:
@@ -16,8 +16,8 @@ spec:
       - name: app-volume
         emptyDir: {}
       containers:
-      - name: nginx
-        image: nginx
+      - name: tomcat
+        image: tomcat:jre25-temurin-noble
         volumeMounts:
         - name: app-volume
           mountPath: /data
