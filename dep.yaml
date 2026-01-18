@@ -17,9 +17,10 @@ spec:
           image: nginx
           env:
             - name: APP_MODE
-              valueFrom: 
-                ConfigMapKeyRef:
+              valueFrom:
+                configMapKeyRef:
                   name: app-config
                   key: APP_MODE
-         command: ["sh", "-c"]
-         args: ["echo Hello from deplyoment of $APP_MODE"]
+          command: ["sh", "-c"]
+          args:
+            - echo "Hello from deployment, APP_MODE=$APP_MODE" && sleep infinity
